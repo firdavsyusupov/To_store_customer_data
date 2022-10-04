@@ -11,7 +11,9 @@ from aiogram.dispatcher import FSMContext
 
 
 # API_TOKEN = '5537289338:AAEwSGOvbS8XlA98MYG1TX87gqT-EkKOVjk'   # AbuBakr
-API_TOKEN = '5366807852:AAERuJaIYQcn5RbsX1kNEKHOLgrouupjh3w'     # Islom
+# API_TOKEN = '5366807852:AAERuJaIYQcn5RbsX1kNEKHOLgrouupjh3w'     # Islom
+API_TOKEN = "5111585539:AAGcIPBKJiTM6DKbyhRbfjdLMDPVQOXesng"    # Islom kril-lotin
+
 logging.basicConfig(level=logging.INFO)
 
 # Initialize bot and dispatcher
@@ -27,8 +29,8 @@ db = Database('client.db')
 @dp.message_handler(commands=['start'])
 async def register(message: types.Message):
     # await message.answer(f'Admin Panelga Xush kelibsiz!')
-    await bot.send_message(message.from_user.id, "Aссалому алеком\n Озингизга керакли болимни танланг",reply_markup=mr.main_menu)
-
+    await bot.send_message(message.from_user.id, "Aссалому алеком\n Озингизга керакли болимни танланг",reply_markup=mr.location)
+    a = message
 
 @dp.callback_query_handler(text='back')
 async def back(message: types.CallbackQuery):
