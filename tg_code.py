@@ -38,8 +38,9 @@ async def handle_location(message: types.Message):
     lon = message.location.longitude
     reply = "latitude:  {}\nlongitude: {}".format(lat, lon)
     await message.answer(reply, reply_markup=types.ReplyKeyboardRemove())
-    print(lat)
-    print(lon)
+    print("latitude:", lat)
+    print("longitude:", lon)
+
 @dp.callback_query_handler(text='back')
 async def back(message: types.CallbackQuery):
     await bot.send_message(message.from_user.id, "Aссалому алеком\n Озингизга керакли болимни танланг",
