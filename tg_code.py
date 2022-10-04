@@ -30,8 +30,16 @@ db = Database('client.db')
 async def register(message: types.Message):
     # await message.answer(f'Admin Panelga Xush kelibsiz!')
     await bot.send_message(message.from_user.id, "Aссалому алеком\n Озингизга керакли болимни танланг",reply_markup=mr.location)
-    a = message
 
+
+@dp.message_handler(content_types=['location'])
+async def handle_location(message: types.Message):
+    lat = message.location.latitude
+    lon = message.location.longitude
+    reply = "latitude:  {}\nlongitude: {}".format(lat, lon)
+    await message.answer(reply, reply_markup=types.ReplyKeyboardRemove())
+    print(lat)
+    print(lon)
 @dp.callback_query_handler(text='back')
 async def back(message: types.CallbackQuery):
     await bot.send_message(message.from_user.id, "Aссалому алеком\n Озингизга керакли болимни танланг",
