@@ -101,3 +101,4 @@ remake_malumot.insert(back)
 
 
 
+location = ReplyKeyboardMarkup( resize_keyboard=True ).add( KeyboardButton("Lokatsiya", request_location=True) )
